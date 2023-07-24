@@ -81,65 +81,103 @@ int main()
             }
             if (event.mouseButton.button == sf::Mouse::Left)
             {
-                if (TopLeftButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) 
-                { 
-                    if (PositionsTaken[0].second == 0) 
-                    { 
-                        if (WhoseGo) 
-                        { 
-                            PositionsTaken[0].second = 1; 
-                        } 
-                        else 
+                if (TopLeftButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y))
+                {
+                    if (PositionsTaken[0].second == 0)
+                    {
+                        if (WhoseGo)
                         {
-                            PositionsTaken[0].second = 2; 
-                        } 
-                        if (WhoseGo) { WhoseGo = false; } else { WhoseGo = true; }
-                    } 
+                            PositionsTaken[0].second = 1;
+                        }
+                        else
+                        {
+                            PositionsTaken[0].second = 2;
+                        }
+                        if (WhoseGo) { WhoseGo = false; }
+                        else { WhoseGo = true; }
+                    }
                 }
-                else if (TopMiddleButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y))    { int current_number = 1; if (PositionsTaken[current_number].second == 0) { if (WhoseGo) { PositionsTaken[0].second = 1; } else { PositionsTaken[current_number].second = 2; } if (WhoseGo) { WhoseGo = false; }
-                else { WhoseGo = true; }
-                } }
-                else if (TopRightButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y))     { int current_number = 1; if (PositionsTaken[current_number].second == 0) { if (WhoseGo) { PositionsTaken[0].second = 1; } else { PositionsTaken[current_number].second = 2; } if (WhoseGo) { WhoseGo = false; }
-                else { WhoseGo = true; }
-                } }
-                else if (MiddleLeftButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y))   { int current_number = 1; if (PositionsTaken[current_number].second == 0) { if (WhoseGo) { PositionsTaken[0].second = 1; } else { PositionsTaken[current_number].second = 2; } if (WhoseGo) { WhoseGo = false; }
-                else { WhoseGo = true; }
-                } }
-                else if (MiddleMiddleButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) { int current_number = 1; if (PositionsTaken[current_number].second == 0) { if (WhoseGo) { PositionsTaken[0].second = 1; } else { PositionsTaken[current_number].second = 2; } if (WhoseGo) { WhoseGo = false; }
-                else { WhoseGo = true; }
-                } }
-                else if (MiddleRightButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y))  { int current_number = 1; if (PositionsTaken[current_number].second == 0) { if (WhoseGo) { PositionsTaken[0].second = 1; } else { PositionsTaken[current_number].second = 2; } if (WhoseGo) { WhoseGo = false; }
-                else { WhoseGo = true; }
-                } }
-                else if (BottomLeftButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y))   { int current_number = 1; if (PositionsTaken[current_number].second == 0) { if (WhoseGo) { PositionsTaken[0].second = 1; } else { PositionsTaken[current_number].second = 2; } if (WhoseGo) { WhoseGo = false; }
-                else { WhoseGo = true; }
-                } }
-                else if (BottomMiddleButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) { int current_number = 1; if (PositionsTaken[current_number].second == 0) { if (WhoseGo) { PositionsTaken[0].second = 1; } else { PositionsTaken[current_number].second = 2; } if (WhoseGo) { WhoseGo = false; }
-                else { WhoseGo = true; }
-                } }
-                else if (BottomRightButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y))  { int current_number = 1; if (PositionsTaken[current_number].second == 0) { if (WhoseGo) { PositionsTaken[0].second = 1; } else { PositionsTaken[current_number].second = 2; } if (WhoseGo) { WhoseGo = false; }
-                else { WhoseGo = true; }
+                else if (TopMiddleButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
+                    int current_number = 1; if (PositionsTaken[current_number].second == 0) {
+                        if (WhoseGo) { PositionsTaken[0].second = 1; }
+                        else { PositionsTaken[current_number].second = 2; } if (WhoseGo) { WhoseGo = false; }
+                        else { WhoseGo = true; }
+                    }
+                }
+                else if (TopRightButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
+                    int current_number = 1; if (PositionsTaken[current_number].second == 0) {
+                        if (WhoseGo) { PositionsTaken[0].second = 1; }
+                        else { PositionsTaken[current_number].second = 2; } if (WhoseGo) { WhoseGo = false; }
+                        else { WhoseGo = true; }
+                    }
+                }
+                else if (MiddleLeftButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
+                    int current_number = 1; if (PositionsTaken[current_number].second == 0) {
+                        if (WhoseGo) { PositionsTaken[0].second = 1; }
+                        else { PositionsTaken[current_number].second = 2; } if (WhoseGo) { WhoseGo = false; }
+                        else { WhoseGo = true; }
+                    }
+                }
+                else if (MiddleMiddleButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
+                    int current_number = 1; if (PositionsTaken[current_number].second == 0) {
+                        if (WhoseGo) { PositionsTaken[0].second = 1; }
+                        else { PositionsTaken[current_number].second = 2; } if (WhoseGo) { WhoseGo = false; }
+                        else { WhoseGo = true; }
+                    }
+                }
+                else if (MiddleRightButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
+                    int current_number = 1; if (PositionsTaken[current_number].second == 0) {
+                        if (WhoseGo) { PositionsTaken[0].second = 1; }
+                        else { PositionsTaken[current_number].second = 2; } if (WhoseGo) { WhoseGo = false; }
+                        else { WhoseGo = true; }
+                    }
+                }
+                else if (BottomLeftButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
+                    int current_number = 1; if (PositionsTaken[current_number].second == 0) {
+                        if (WhoseGo) { PositionsTaken[0].second = 1; }
+                        else { PositionsTaken[current_number].second = 2; } if (WhoseGo) { WhoseGo = false; }
+                        else { WhoseGo = true; }
+                    }
+                }
+                else if (BottomMiddleButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
+                    int current_number = 1; if (PositionsTaken[current_number].second == 0) {
+                        if (WhoseGo) { PositionsTaken[0].second = 1; }
+                        else { PositionsTaken[current_number].second = 2; } if (WhoseGo) { WhoseGo = false; }
+                        else { WhoseGo = true; }
+                    }
+                }
+                else if (BottomRightButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
+                    int current_number = 1; if (PositionsTaken[current_number].second == 0) {
+                        if (WhoseGo) { PositionsTaken[0].second = 1; }
+                        else { PositionsTaken[current_number].second = 2; } if (WhoseGo) { WhoseGo = false; }
+                        else { WhoseGo = true; }
                 } }
             }
         }
 
-        window.clear();
+
         window.draw(s_background);
-        for (const auto& x : PositionsTaken)
+        for (auto& x : PositionsTaken)
         {
             if (x.second == 0) {/**/ }
             else
             {
                 if (x.second == 1)
                 {
-                    naught.setPosition(x.first.x, x.first.y);
+                    sf::Sprite naught_two;
+                    naught_two.setTexture(t_naught);
+                    naught_two.setPosition(x.first.x, x.first.y);
                     window.draw(naught);
                 }
                 if (x.second == 2)
                 {
-                    cross.setPosition(x.first.x, x.first.y);
-                    window.draw(naught);
+                    sf::Sprite cross_two;
+                    cross_two.setTexture(t_cross);
+                    cross_two.setPosition(x.first.x, x.first.y);
+                    window.draw(cross);
+                    std::cout << "naught cross\n";
                 }
+                x.second = 3;
             }
         }
         window.display();
