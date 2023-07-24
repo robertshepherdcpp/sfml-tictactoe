@@ -168,6 +168,7 @@ int main()
                     naught_two.setTexture(t_naught);
                     naught_two.setPosition(x.first.x, x.first.y);
                     window.draw(naught);
+                    std::cout << "cross\n";
                 }
                 if (x.second == 2)
                 {
@@ -175,7 +176,7 @@ int main()
                     cross_two.setTexture(t_cross);
                     cross_two.setPosition(x.first.x, x.first.y);
                     window.draw(cross);
-                    std::cout << "naught cross\n";
+                    std::cout << "naught\n";
                 }
                 x.second = 3;
             }
