@@ -22,6 +22,39 @@ auto f_to_u(const sf::Vector2f& vec_one)
     return sf::Vector2u(vec_one.x, vec_one.y);
 }
 
+bool checkWin(const std::vector<int>& PositionsTaken) {
+    // Check rows
+    for (int i = 0; i < 9; i += 3) {
+        if (PositionsTaken[i] != 0 && PositionsTaken[i] == PositionsTaken[i + 1] && PositionsTaken[i + 1] == PositionsTaken[i + 2]) {
+            return true;
+        }
+    }
+
+    // Check columns
+    for (int i = 0; i < 3; i++) {
+        if (PositionsTaken[i] != 0 && PositionsTaken[i] == PositionsTaken[i + 3] && PositionsTaken[i + 3] == PositionsTaken[i + 6]) {
+            return true;
+        }
+    }
+
+    // Check diagonals
+    if (PositionsTaken[0] != 0 && PositionsTaken[0] == PositionsTaken[4] && PositionsTaken[4] == PositionsTaken[8]) {
+        return true;
+    }
+    if (PositionsTaken[2] != 0 && PositionsTaken[2] == PositionsTaken[4] && PositionsTaken[4] == PositionsTaken[6]) {
+        return true;
+    }
+
+    // Check stalemate
+    for (int i = 0; i < 9; i++) {
+        if (PositionsTaken[i] == 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
 int main()
 {
     // 0 is nothing
@@ -43,6 +76,8 @@ int main()
 
     sf::Texture texture;
     texture.loadFromFile("my_texture.png");
+
+    bool has_won = false;
 
     sf::Sprite TopLeftButton(texture);      TopLeftButton.setPosition(0, 0);
     sf::Sprite TopMiddleButton(texture);    TopMiddleButton.setPosition(69, 0);
@@ -84,7 +119,7 @@ int main()
             {
                 window.setSize(sf::Vector2u(200.f, 200.f));
             }
-            if (event.mouseButton.button == sf::Mouse::Left)
+            if (event.mouseButton.button == sf::Mouse::Left && !has_won)
             {
                 if (TopLeftButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y))
                 {
@@ -169,6 +204,17 @@ int main()
                 }
             }
         }
+
+        // ---------------------------------------------------------------------------------------------------------------
+        // This is where we check if anyone has won.
+        std::vector<int> player_positions{};
+        player_positions.reserve(9);
+        for (const auto& x : PositionsTaken)
+        {
+            player_positions.push_back(x.second);
+        }
+        has_won = checkWin(player_positions);
+        // ---------------------------------------------------------------------------------------------------------------
 
         window.clear();
         window.draw(s_background);
