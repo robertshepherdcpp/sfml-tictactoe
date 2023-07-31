@@ -24,7 +24,7 @@ int main()
     // 2 is crosses
     std::vector<std::pair<sf::Vector2u, int>> PositionsTaken
     {
-        std::pair<sf::Vector2u, int>{sf::Vector2u{0, 9},     0},
+        std::pair<sf::Vector2u, int>{sf::Vector2u{0, 0},     0},
         std::pair<sf::Vector2u, int>{sf::Vector2u{69, 0},    0},
         std::pair<sf::Vector2u, int>{sf::Vector2u{138, 0},   0},
         std::pair<sf::Vector2u, int>{sf::Vector2u{0, 69},    0},
@@ -95,67 +95,77 @@ int main()
                         }
                         if (WhoseGo) { WhoseGo = false; }
                         else { WhoseGo = true; }
+                        PositionsTaken[0].first = sf::Vector2u(event.mouseButton.x, event.mouseButton.y);
                     }
                 }
                 else if (TopMiddleButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
                     int current_number = 1; if (PositionsTaken[current_number].second == 0) {
-                        if (WhoseGo) { PositionsTaken[0].second = 1; }
+                        if (WhoseGo) { PositionsTaken[current_number].second = 1; }
                         else { PositionsTaken[current_number].second = 2; } if (WhoseGo) { WhoseGo = false; }
                         else { WhoseGo = true; }
                     }
+                    PositionsTaken[1].first = sf::Vector2u(event.mouseButton.x, event.mouseButton.y);
                 }
                 else if (TopRightButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
-                    int current_number = 1; if (PositionsTaken[current_number].second == 0) {
-                        if (WhoseGo) { PositionsTaken[0].second = 1; }
+                    int current_number = 2; if (PositionsTaken[current_number].second == 0) {
+                        if (WhoseGo) { PositionsTaken[current_number].second = 1; }
                         else { PositionsTaken[current_number].second = 2; } if (WhoseGo) { WhoseGo = false; }
                         else { WhoseGo = true; }
                     }
+                    PositionsTaken[2].first = sf::Vector2u(event.mouseButton.x, event.mouseButton.y);
                 }
                 else if (MiddleLeftButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
-                    int current_number = 1; if (PositionsTaken[current_number].second == 0) {
-                        if (WhoseGo) { PositionsTaken[0].second = 1; }
+                    int current_number = 3; if (PositionsTaken[current_number].second == 0) {
+                        if (WhoseGo) { PositionsTaken[current_number].second = 1; }
                         else { PositionsTaken[current_number].second = 2; } if (WhoseGo) { WhoseGo = false; }
                         else { WhoseGo = true; }
                     }
+                    PositionsTaken[3].first = sf::Vector2u(event.mouseButton.x, event.mouseButton.y);
                 }
                 else if (MiddleMiddleButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
-                    int current_number = 1; if (PositionsTaken[current_number].second == 0) {
-                        if (WhoseGo) { PositionsTaken[0].second = 1; }
+                    int current_number = 4; if (PositionsTaken[current_number].second == 0) {
+                        if (WhoseGo) { PositionsTaken[current_number].second = 1; }
                         else { PositionsTaken[current_number].second = 2; } if (WhoseGo) { WhoseGo = false; }
                         else { WhoseGo = true; }
                     }
+                    PositionsTaken[4].first = sf::Vector2u(event.mouseButton.x, event.mouseButton.y);
                 }
                 else if (MiddleRightButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
-                    int current_number = 1; if (PositionsTaken[current_number].second == 0) {
-                        if (WhoseGo) { PositionsTaken[0].second = 1; }
+                    int current_number = 5; if (PositionsTaken[current_number].second == 0) {
+                        if (WhoseGo) { PositionsTaken[current_number].second = 1; }
                         else { PositionsTaken[current_number].second = 2; } if (WhoseGo) { WhoseGo = false; }
                         else { WhoseGo = true; }
                     }
+                    PositionsTaken[5].first = sf::Vector2u(event.mouseButton.x, event.mouseButton.y);
                 }
                 else if (BottomLeftButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
-                    int current_number = 1; if (PositionsTaken[current_number].second == 0) {
-                        if (WhoseGo) { PositionsTaken[0].second = 1; }
+                    int current_number = 6; if (PositionsTaken[current_number].second == 0) {
+                        if (WhoseGo) { PositionsTaken[current_number].second = 1; }
                         else { PositionsTaken[current_number].second = 2; } if (WhoseGo) { WhoseGo = false; }
                         else { WhoseGo = true; }
                     }
+                    PositionsTaken[6].first = sf::Vector2u(event.mouseButton.x, event.mouseButton.y);
                 }
                 else if (BottomMiddleButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
-                    int current_number = 1; if (PositionsTaken[current_number].second == 0) {
-                        if (WhoseGo) { PositionsTaken[0].second = 1; }
+                    int current_number = 7; if (PositionsTaken[current_number].second == 0) {
+                        if (WhoseGo) { PositionsTaken[current_number].second = 1; }
                         else { PositionsTaken[current_number].second = 2; } if (WhoseGo) { WhoseGo = false; }
                         else { WhoseGo = true; }
                     }
+                    PositionsTaken[7].first = sf::Vector2u(event.mouseButton.x, event.mouseButton.y);
                 }
                 else if (BottomRightButton.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
-                    int current_number = 1; if (PositionsTaken[current_number].second == 0) {
-                        if (WhoseGo) { PositionsTaken[0].second = 1; }
+                    int current_number = 8; if (PositionsTaken[current_number].second == 0) {
+                        if (WhoseGo) { PositionsTaken[current_number].second = 1; }
                         else { PositionsTaken[current_number].second = 2; } if (WhoseGo) { WhoseGo = false; }
                         else { WhoseGo = true; }
-                } }
+                    }  
+                    PositionsTaken[8].first = sf::Vector2u(event.mouseButton.x, event.mouseButton.y);
+                }
             }
         }
 
-
+        window.clear();
         window.draw(s_background);
         for (auto& x : PositionsTaken)
         {
@@ -178,7 +188,6 @@ int main()
                     window.draw(cross);
                     std::cout << "naught\n";
                 }
-                x.second = 3;
             }
         }
         window.display();
